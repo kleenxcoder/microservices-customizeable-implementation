@@ -7,25 +7,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
-import javax.persistence.Table;
 
-import org.springframework.context.annotation.Description;
-
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
-@Table(name = "user")
-@Description("user table")
-@NoArgsConstructor
-@AllArgsConstructor
 @ToString
 @MappedSuperclass
-public class BaseUserEntity extends BaseEntity implements Serializable {
+public class BaseUser extends BaseEntity implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
