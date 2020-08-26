@@ -13,10 +13,12 @@ import org.springframework.context.annotation.Description;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Data
+@EqualsAndHashCode(callSuper = true)
 @Table(name = "user")
 @Description("user table")
 @NoArgsConstructor
@@ -40,4 +42,7 @@ public class BaseUserEntity extends BaseEntity implements Serializable {
 
     @Column(name = "active")
     private Boolean active;
+    
+    @Column(name = "password")
+    private String password;
 }
