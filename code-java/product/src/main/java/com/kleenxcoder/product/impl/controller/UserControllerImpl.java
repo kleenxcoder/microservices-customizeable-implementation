@@ -1,5 +1,7 @@
 package com.kleenxcoder.product.impl.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,5 +31,11 @@ public class UserControllerImpl implements UserController {
     public User findByInternalId(@PathVariable String internalId) {
         return service.findByInternalId(internalId);
     }
+	
+	@GetMapping("/createUsers")
+    @ResponseStatus(HttpStatus.OK)
+	public List<User> createUsers() {
+		return service.createUsers();
+	}
 
 }
