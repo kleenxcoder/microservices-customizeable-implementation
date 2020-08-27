@@ -12,7 +12,7 @@ import com.kleenxcoder.product.impl.model.entity.User;
 import com.kleenxcoder.product.impl.service.UserService;
 
 @RestController
-@RequestMapping(value = "/abf/api")
+@RequestMapping(value = "/abf/api/user")
 public class UserControllerImpl implements UserController {
 	
 	@Autowired
