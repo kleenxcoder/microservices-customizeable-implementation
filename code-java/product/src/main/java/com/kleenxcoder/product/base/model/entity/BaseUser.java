@@ -23,7 +23,7 @@ public class BaseUser extends BaseEntity implements Serializable {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Integer id;
+    private Long id;
 
     @Column(name = "firstName")
     private String firstName;
@@ -32,8 +32,11 @@ public class BaseUser extends BaseEntity implements Serializable {
     private String lastName;
 
     @Column(name = "active")
-    private Boolean active;
+    private boolean active;
     
     @Column(name = "password")
     private String password;
+    
+    @Column(name = "email")
+    private String email;
 }
