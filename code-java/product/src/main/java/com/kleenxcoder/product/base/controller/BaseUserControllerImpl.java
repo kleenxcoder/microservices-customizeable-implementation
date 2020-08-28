@@ -10,7 +10,7 @@ import com.kleenxcoder.product.base.model.entity.BaseUser;
 import com.kleenxcoder.product.base.model.repository.BaseUserRepository;
 import com.kleenxcoder.product.base.service.BaseUserService;
 
-public abstract class BaseUserControllerImpl<T extends BaseUser, R extends BaseUserRepository<T> , S extends BaseUserService<T, R> > {
+public abstract class BaseUserControllerImpl<T extends BaseUser, R extends BaseUserRepository<T> , S extends BaseUserService<T, R> > implements BaseUserController<T> {
 	
 	@Autowired
 	protected S service;

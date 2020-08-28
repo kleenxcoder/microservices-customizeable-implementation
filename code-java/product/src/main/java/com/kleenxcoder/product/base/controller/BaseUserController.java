@@ -1,9 +1,9 @@
 package com.kleenxcoder.product.base.controller;
 
-import com.kleenxcoder.product.impl.model.entity.User;
+import com.kleenxcoder.product.base.model.entity.BaseUser;
 
-public interface BaseUserController {
+public interface BaseUserController<T extends BaseUser> {
 	
-	public User findByEmail(String email);
+	public T findByEmail(String email);
 
 }
