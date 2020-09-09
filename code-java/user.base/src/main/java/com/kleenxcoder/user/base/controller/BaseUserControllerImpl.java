@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+import com.kleenxcoder.user.base.component.BaseUserGenerator;
 import com.kleenxcoder.user.base.model.entity.BaseUser;
 import com.kleenxcoder.user.base.model.repository.BaseUserRepository;
 import com.kleenxcoder.user.base.service.BaseUserService;
@@ -16,6 +17,9 @@ public abstract class BaseUserControllerImpl<T extends BaseUser, R extends BaseU
 	
 	@Autowired
 	protected S service;
+	
+	@Autowired
+	protected BaseUserGenerator<T> userGenerator;
 	
 	@GetMapping("/findByEmail/{email}")
     @ResponseStatus(HttpStatus.OK)
@@ -26,7 +30,7 @@ public abstract class BaseUserControllerImpl<T extends BaseUser, R extends BaseU
 	@GetMapping("/createUsers")
     @ResponseStatus(HttpStatus.OK)
 	public List<T> createUsers() {
-		return service.createUsers();
+		return service.createUsers(userGenerator);
 	}
 	
 }

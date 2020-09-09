@@ -8,15 +8,15 @@ import com.kleenxcoder.user.base.component.BaseUserGenerator;
 import com.kleenxcoder.user.base.model.entity.BaseUser;
 import com.kleenxcoder.user.base.model.repository.BaseUserRepository;
 
-public abstract class BaseUserServiceImpl<T extends BaseUser, R extends BaseUserRepository<T>, UG extends BaseUserGenerator<T>> implements BaseUserService<T,R> {
+public abstract class BaseUserServiceImpl<T extends BaseUser, R extends BaseUserRepository<T>> implements BaseUserService<T,R> {
 	
 	protected R repository;
-	protected UG userGenerator;
+//	protected UG userGenerator;
 	
 	@Autowired
-	public BaseUserServiceImpl(R repository, UG userGenerator) {
+	public BaseUserServiceImpl(R repository) {
 		this.repository = repository;
-		this.userGenerator = userGenerator;
+//		this.userGenerator = userGenerator;
 	}
 	
 	public T findByEmail(String email) {
@@ -31,8 +31,8 @@ public abstract class BaseUserServiceImpl<T extends BaseUser, R extends BaseUser
 		return null;
 	}
 	
-	public List<T> createUsers() {
-		Iterable<T> users = userGenerator.generateUsers(10);
+	public List<T> createUsers(BaseUserGenerator<T> userGenerator) {
+		Iterable<T> users = userGenerator.generateEntities(10);
 		return (List<T>) repository.saveAll(users);
 	}
 
