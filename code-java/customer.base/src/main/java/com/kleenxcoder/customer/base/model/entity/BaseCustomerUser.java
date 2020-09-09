@@ -15,7 +15,7 @@ import lombok.ToString;
 @EqualsAndHashCode(callSuper = true)
 @ToString
 @MappedSuperclass
-public abstract class CustomerBaseUser extends BaseUser implements Serializable {
+public abstract class BaseCustomerUser extends BaseUser implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	

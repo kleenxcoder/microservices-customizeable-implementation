@@ -5,7 +5,7 @@ import javax.persistence.Table;
 
 import org.springframework.context.annotation.Description;
 
-import com.kleenxcoder.customer.base.model.entity.CustomerBaseUser;
+import com.kleenxcoder.customer.base.model.entity.BaseCustomerUser;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -15,7 +15,7 @@ import lombok.EqualsAndHashCode;
 @Table(name = "user")
 @Description("user table")
 @EqualsAndHashCode(callSuper = true)
-public class CustomerUser extends CustomerBaseUser {
+public class CustomerUser extends BaseCustomerUser {
 
 	private static final long serialVersionUID = 1L;
 	
