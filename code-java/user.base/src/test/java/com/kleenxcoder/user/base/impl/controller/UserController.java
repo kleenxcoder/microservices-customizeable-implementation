@@ -1,8 +1,15 @@
 package com.kleenxcoder.user.base.impl.controller;
 
-import com.kleenxcoder.user.base.controller.BaseUserController;
-import com.kleenxcoder.user.base.impl.model.entity.User;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-public interface UserController extends BaseUserController<User> {
-	
+import com.kleenxcoder.user.base.controller.BaseUserControllerImpl;
+import com.kleenxcoder.user.base.impl.model.entity.User;
+import com.kleenxcoder.user.base.impl.model.repository.UserRepository;
+import com.kleenxcoder.user.base.impl.service.UserService;
+
+@RestController
+@RequestMapping(value = "/v1/api/user")
+public class UserController extends BaseUserControllerImpl<User, UserRepository, UserService> {
+
 }

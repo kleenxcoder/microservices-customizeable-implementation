@@ -7,6 +7,6 @@ import com.kleenxcoder.user.base.model.repository.BaseUserRepository;
 
 public interface BaseUserService<T extends BaseUser, R extends BaseUserRepository<T>> {
 
-	public T findByEmail(String email);
-	public List<T> createUsers();
+	public abstract T findByEmail(String email);
+	public abstract List<T> createUsers();
 }
