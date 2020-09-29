@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section data-markdown data-background-color="#1c4868">
+				  <script type="text/template">
+				  <!-- .slide: data-background="#1c4868" -->
+				    ## <span style="color:green">Microservice</span>
+				    Customizeable Implementation
+				  </script>
+				</section>
+
+				<section data-background-color="#1c4868">
+					<h2><span style="color:violet">Requirements</span></h2>
+					<p>
+						<ul>
+						   <li>Create a product default and customer base code.</li>
+						   <li>Have the ability to run both.</li>
+						   <li>Use Spring Boot</li>
+						</ul>
+					</p>
+				</section>
+
+				<section data-markdown data-background-color="#1c4868">
+				  <textarea data-template>
+				  	Project structure
+				    ```js [1|2|3|4]
+				    user.base
+				    user.base.impl
+				    customer.base
+				    customer.impl
+				    ```
+				  </textarea>
+				</section>
+
+				<section data-markdown data-background-color="#1c4868">
+				  <textarea data-template>
+				  	Yes you're right!
+				    ```js [1|2|3|4]
+				    user.base
+				    user.base.impl
+				    customer.user.base
+				    customer.user.base.impl
+				    ```
+				  </textarea>
+				</section>				
+
+				<section data-background-color="#1c4868">
+					<h2><span style="color:yellow">Attention should be paid to</span></h2>
+					<p>
+						<ul>
+						   <li>None instanceable objects in base projects.</li>
+						   <li>Pretty empty classes in runable projects.</li>
+						</ul>
+					</p>
+				</section>
+
+				<section data-background-color="#1c4868">
+					<h2><span style="color:red">WeAre</span><span style="color:black">Developers</span> </h2>
+					<p>Let's do some codeing ...</p>
+				</section>
+
+				<section data-background-color="#1c4868">
+					<h2><span style="color:orange">Recap</span></h2>
+					<p>
+						<ul>
+						   <li>We have seen a solution how to reuse code.</li>
+						   <li>I would never name this a product.</li>
+						   <li>A product is something we could extract from a customer implmentation.</li>
+						</ul>						
+					</p>
+				</section>
+
+				<section data-background-color="#1c4868">
+					<h2><span style="color:orange">Thought's</span> </h2>
+					<p>
+						<ul>
+						   <li>Extract entities in to seperate jar.</li>
+						</ul>						
+					</p>
+				</section>
+
+
+				<section data-background-color="#1c4868">
+					<h2><span style="color:grey">Discussion !</span> </h2>
+				</section>
+				
+				<section data-background-color="#1c4868">
+					<p><span style="color:orange">Thank's for your attention!</span> </p>
+					<p>
+						<ul>
+						   <li>Peter Stritzinger</li>
+						</ul>						
+					</p>
+				</section>
+
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+
+				controls: true,
+				slideNumber: true,
+				hash: true,
+				touch: true,
+				transition: 'none',
+
+				markdown: {
+				    smartypants: true
+				  },
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
